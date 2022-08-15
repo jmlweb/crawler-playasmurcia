@@ -82,7 +82,7 @@ const parseBeach = (rawBeach: RawBeach) => {
     beach.accessType = rawBeach['Tipo Acceso'];
   }
 
-  if (beach.position[0] > 0) {
+  if (beach.position[1] > 10) {
     const parsedCoordinates = utmToLatLng(beach.position[0], beach.position[1]);
     beach.position = [parsedCoordinates.lat, parsedCoordinates.lng];
   }
