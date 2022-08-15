@@ -1,17 +1,22 @@
 import parseOccupation from './parseOccupation';
 import { Beach, RawBeach } from '../../shared/types';
 import utmToLatLng from './utmToLatLng';
+import excludedPics from './excludedPics';
 
 const capitalize = (x: string) => (x.length === 0 ? x : `${x[0].toUpperCase()}${x.slice(1).toLowerCase()}`);
-const slugify = (x: string) =>
-  x
-    .toLowerCase()
+
+const EXCLUDED_WORDS = ['el', 'la', 'los', 'las', 'de', 'del', 'y'];
+
+export const slugify = (x: string) => {
+  const parts = x
     .normalize('NFD')
-    .replace(' del ', ' ')
-    .replace(' de ', ' ')
+    .toLowerCase()
     .replace(/[\u0300-\u036f()]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/[.,]/g, '');
+    .replace(/[.,-]/g, '')
+    .replace(/\s+/g, ' ')
+    .split(' ');
+  return parts.filter((part) => !EXCLUDED_WORDS.includes(part)).join('-');
+};
 
 const parseBeach = (rawBeach: RawBeach) => {
   const beach: Beach = {
@@ -24,12 +29,14 @@ const parseBeach = (rawBeach: RawBeach) => {
     sea: rawBeach.Mar === 'Mar Menor' ? 1 : 0,
     promenade: rawBeach['Paseo Marítimo'] === 'Sí',
     accesible: rawBeach.Accesible === 'Sí',
+    blueFlag: rawBeach['Bandera Azul'] === 'Sí',
     pics: [],
   };
 
   Object.keys(rawBeach).forEach((key) => {
     if (key.match(/^Foto/)) {
-      beach.pics = [...beach.pics, rawBeach[key as `Foto${number}`]];
+      const value = rawBeach[key as `Foto${number}`];
+      beach.pics = excludedPics.includes(value) ? beach.pics : [...beach.pics, value];
     }
   });
 

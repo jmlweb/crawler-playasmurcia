@@ -47,6 +47,7 @@ export interface Beach {
   sea: 1 | 0;
   promenade: boolean;
   accessType?: string;
+  blueFlag: boolean;
   accesible: boolean;
   pics: ReadonlyArray<string>;
 }
