@@ -85,7 +85,6 @@ export default [
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-561-8p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-561-10p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-561-11p_g.jpg',
-  'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-561-13p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-540-1p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-540-3p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-540-7p_g.jpg',
@@ -95,7 +94,6 @@ export default [
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-674-1p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-674-2p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-674-3p_g.jpg',
-  'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-674-12p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-674-7p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-674-10p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-537-1p_g.jpg',
@@ -141,4 +139,5 @@ export default [
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-672-4p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-672-12p_g.jpg',
   'http://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-672-7p_g.jpg',
+  'https://www.murciaturistica.es/webs/murciaturistica/fotos/1/playas/recurso-1-562-1p_g.jpg',
 ];

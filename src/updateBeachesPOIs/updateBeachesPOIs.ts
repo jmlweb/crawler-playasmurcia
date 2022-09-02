@@ -9,7 +9,7 @@ const MAX_REQUESTS = 4;
 
 const fetchAndSavePOIs = async (beachPosition: BeachPosition) => {
   const rawPOIs = await fetchPOIs(beachPosition);
-  const pois = rawPOIs.map(parsePOI);
+  const pois = rawPOIs.filter((rawPOI) => !rawPOI.poi.categories.includes('beach')).map(parsePOI);
   await s3Service.savePois(beachPosition.slug, pois);
 };
 
